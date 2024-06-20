@@ -362,6 +362,45 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiDesignDesign extends Schema.CollectionType {
+  collectionName: 'designs';
+  info: {
+    singularName: 'design';
+    pluralName: 'designs';
+    displayName: 'Design';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nickName: Attribute.String;
+    description: Attribute.Text;
+    reference: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    category: Attribute.String;
+    budget: Attribute.Integer;
+    user: Attribute.Relation<
+      'api::design.design',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::design.design',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::design.design',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -779,7 +818,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     roleType: Attribute.String;
     position: Attribute.String;
     displayName: Attribute.String;
-    commissions: Attribute.String;
+    commissions: Attribute.String & Attribute.DefaultTo<'0'>;
     quote: Attribute.String;
     country: Attribute.String;
     company: Attribute.String;
@@ -792,6 +831,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'oneToMany',
       'api::post.post'
+    >;
+    designs: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::design.design'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -867,6 +911,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::design.design': ApiDesignDesign;
       'api::post.post': ApiPostPost;
       'api::test.test': ApiTestTest;
       'plugin::upload.file': PluginUploadFile;

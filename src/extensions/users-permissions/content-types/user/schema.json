@@ -75,7 +75,8 @@
       "type": "string"
     },
     "commissions": {
-      "type": "string"
+      "type": "string",
+      "default": "0"
     },
     "quote": {
       "type": "string"
@@ -105,6 +106,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::post.post",
+      "mappedBy": "user"
+    },
+    "designs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::design.design",
       "mappedBy": "user"
     }
   }
