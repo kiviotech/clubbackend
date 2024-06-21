@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * design service
+ * user-detail service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::design.design');
+module.exports = createCoreService('api::user-detail.user-detail');

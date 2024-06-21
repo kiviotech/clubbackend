@@ -65,53 +65,20 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "roleType": {
-      "type": "string"
-    },
-    "position": {
-      "type": "string"
-    },
-    "displayName": {
-      "type": "string"
-    },
-    "commissions": {
-      "type": "string",
-      "default": "0"
-    },
-    "quote": {
-      "type": "string"
-    },
-    "country": {
-      "type": "string"
-    },
-    "company": {
-      "type": "string"
-    },
-    "school": {
-      "type": "string"
-    },
-    "facebook": {
-      "type": "string"
-    },
-    "instagram": {
-      "type": "string"
-    },
-    "linkedin": {
-      "type": "string"
-    },
-    "twitter": {
-      "type": "string"
-    },
     "posts": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "user"
     },
-    "designs": {
+    "hasEnteredDetails": {
+      "type": "boolean",
+      "default": false
+    },
+    "user_detail": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::design.design",
+      "relation": "oneToOne",
+      "target": "api::user-detail.user-detail",
       "mappedBy": "user"
     }
   }

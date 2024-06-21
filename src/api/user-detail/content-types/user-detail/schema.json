@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_details",
+  "info": {
+    "singularName": "user-detail",
+    "pluralName": "user-details",
+    "displayName": "UserDetail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "displayname": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "commissions": {
+      "type": "integer",
+      "default": 0
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_detail"
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "customer",
+        "designer"
+      ]
+    },
+    "yearsofexp": {
+      "type": "integer",
+      "default": 0
+    },
+    "bestdesigns": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "speciality": {
+      "type": "customField",
+      "options": [
+        "Avant-Garde",
+        "Bohemian",
+        "Business/Formal Wear",
+        "Ethnical/Traditional Wear",
+        "Gender-Neutral/Androgynous Fashion",
+        "Gothic",
+        "Haute Couture",
+        "Leather",
+        "Lingerie/Intimate Apparel",
+        "Minimalist",
+        "Punk",
+        "Retro/Vintage-Inspired",
+        "Romantic",
+        "Sportswear/Activewear",
+        "Streetwear",
+        "Sustainable Fashion",
+        "Swimwear",
+        "Techwear",
+        "Vintage",
+        "Western Wear"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "design_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::design-request.design-request",
+      "mappedBy": "user_detail"
+    }
+  }
+}

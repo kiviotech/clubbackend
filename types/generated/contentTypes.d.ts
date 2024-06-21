@@ -362,38 +362,38 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiDesignDesign extends Schema.CollectionType {
-  collectionName: 'designs';
+export interface ApiDesignRequestDesignRequest extends Schema.CollectionType {
+  collectionName: 'design_requests';
   info: {
-    singularName: 'design';
-    pluralName: 'designs';
-    displayName: 'Design';
+    singularName: 'design-request';
+    pluralName: 'design-requests';
+    displayName: 'DesignRequest';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    nickName: Attribute.String;
+    nickname: Attribute.String;
     description: Attribute.Text;
-    reference: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     category: Attribute.String;
     budget: Attribute.Integer;
-    user: Attribute.Relation<
-      'api::design.design',
+    references: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    user_detail: Attribute.Relation<
+      'api::design-request.design-request',
       'manyToOne',
-      'plugin::users-permissions.user'
+      'api::user-detail.user-detail'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::design.design',
+      'api::design-request.design-request',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::design.design',
+      'api::design-request.design-request',
       'oneToOne',
       'admin::user'
     > &
@@ -450,6 +450,80 @@ export interface ApiTestTest extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiUserDetailUserDetail extends Schema.CollectionType {
+  collectionName: 'user_details';
+  info: {
+    singularName: 'user-detail';
+    pluralName: 'user-details';
+    displayName: 'UserDetail';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    displayname: Attribute.String;
+    position: Attribute.String;
+    city: Attribute.String;
+    country: Attribute.String;
+    commissions: Attribute.Integer & Attribute.DefaultTo<0>;
+    user: Attribute.Relation<
+      'api::user-detail.user-detail',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    role: Attribute.Enumeration<['customer', 'designer']>;
+    yearsofexp: Attribute.Integer & Attribute.DefaultTo<0>;
+    bestdesigns: Attribute.Media<'images' | 'videos', true>;
+    speciality: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Avant-Garde',
+          'Bohemian',
+          'Business/Formal Wear',
+          'Ethnical/Traditional Wear',
+          'Gender-Neutral/Androgynous Fashion',
+          'Gothic',
+          'Haute Couture',
+          'Leather',
+          'Lingerie/Intimate Apparel',
+          'Minimalist',
+          'Punk',
+          'Retro/Vintage-Inspired',
+          'Romantic',
+          'Sportswear/Activewear',
+          'Streetwear',
+          'Sustainable Fashion',
+          'Swimwear',
+          'Techwear',
+          'Vintage',
+          'Western Wear'
+        ]
+      >;
+    design_requests: Attribute.Relation<
+      'api::user-detail.user-detail',
+      'oneToMany',
+      'api::design-request.design-request'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::user-detail.user-detail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::user-detail.user-detail',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -862,27 +936,16 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    roleType: Attribute.String;
-    position: Attribute.String;
-    displayName: Attribute.String;
-    commissions: Attribute.String & Attribute.DefaultTo<'0'>;
-    quote: Attribute.String;
-    country: Attribute.String;
-    company: Attribute.String;
-    school: Attribute.String;
-    facebook: Attribute.String;
-    instagram: Attribute.String;
-    linkedin: Attribute.String;
-    twitter: Attribute.String;
     posts: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
       'api::post.post'
     >;
-    designs: Attribute.Relation<
+    hasEnteredDetails: Attribute.Boolean & Attribute.DefaultTo<false>;
+    user_detail: Attribute.Relation<
       'plugin::users-permissions.user',
-      'oneToMany',
-      'api::design.design'
+      'oneToOne',
+      'api::user-detail.user-detail'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -911,9 +974,10 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::design.design': ApiDesignDesign;
+      'api::design-request.design-request': ApiDesignRequestDesignRequest;
       'api::post.post': ApiPostPost;
       'api::test.test': ApiTestTest;
+      'api::user-detail.user-detail': ApiUserDetailUserDetail;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
