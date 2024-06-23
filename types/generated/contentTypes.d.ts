@@ -510,6 +510,7 @@ export interface ApiUserDetailUserDetail extends Schema.CollectionType {
       'oneToMany',
       'api::design-request.design-request'
     >;
+    about: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -85,6 +85,9 @@
       "relation": "oneToMany",
       "target": "api::design-request.design-request",
       "mappedBy": "user_detail"
+    },
+    "about": {
+      "type": "text"
     }
   }
 }
