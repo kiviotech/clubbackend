@@ -38,6 +38,12 @@
       "relation": "manyToOne",
       "target": "api::user-detail.user-detail",
       "inversedBy": "design_requests"
+    },
+    "bids": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bid.bid",
+      "mappedBy": "design_request"
     }
   }
 }

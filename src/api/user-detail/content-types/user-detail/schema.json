@@ -88,6 +88,12 @@
     },
     "about": {
       "type": "text"
+    },
+    "bids": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bid.bid",
+      "mappedBy": "user_detail"
     }
   }
 }

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bids",
+  "info": {
+    "singularName": "bid",
+    "pluralName": "bids",
+    "displayName": "Bid",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "integer"
+    },
+    "estdate": {
+      "type": "date"
+    },
+    "message": {
+      "type": "text"
+    },
+    "design_request": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::design-request.design-request",
+      "inversedBy": "bids"
+    },
+    "user_detail": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-detail.user-detail",
+      "inversedBy": "bids"
+    }
+  }
+}
