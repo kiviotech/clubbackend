@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "singularName": "payment",
+    "pluralName": "payments",
+    "displayName": "payment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "Payment Method",
+        "Credit Card",
+        "Debit Card",
+        "PayPal",
+        "Bank Transfer",
+        "Cash",
+        "Mobile Payment",
+        "Gift Card",
+        "Cryptocurrency",
+        "Check",
+        "Digital Wallet"
+      ]
+    },
+    "amount": {
+      "type": "float"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "sent",
+        "pending",
+        "failed"
+      ]
+    },
+    "escrow": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::escrow.escrow",
+      "inversedBy": "payment"
+    }
+  }
+}

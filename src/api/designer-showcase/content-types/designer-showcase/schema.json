@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "designer_showcases",
+  "info": {
+    "singularName": "designer-showcase",
+    "pluralName": "designer-showcases",
+    "displayName": "DesignerShowcase"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "item_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "designer_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "showcase_rating": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::showcase-rating.showcase-rating",
+      "mappedBy": "designer_showcase"
+    }
+  }
+}

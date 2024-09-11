@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deliverables",
+  "info": {
+    "singularName": "deliverable",
+    "pluralName": "deliverables",
+    "displayName": "Deliverable"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "delivered",
+        "pending"
+      ]
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "inversedBy": "deliverable"
+    },
+    "file_path": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
