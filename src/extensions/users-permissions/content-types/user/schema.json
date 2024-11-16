@@ -65,41 +65,53 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "roleType": {
-      "type": "string"
+    "bid": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bid.bid",
+      "mappedBy": "users_permissions_user"
     },
-    "position": {
-      "type": "string"
+    "chat": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chat.chat",
+      "mappedBy": "users_permissions_user"
     },
-    "displayName": {
-      "type": "string"
+    "brand_store": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand-store.brand-store",
+      "mappedBy": "user_id"
     },
-    "commissions": {
-      "type": "string"
+    "review": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::review.review",
+      "mappedBy": "reviewee_id"
     },
-    "quote": {
-      "type": "string"
+    "showcase_rating": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::showcase-rating.showcase-rating",
+      "mappedBy": "user_id"
     },
-    "country": {
-      "type": "string"
+    "shipping_infos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shipping-info.shipping-info",
+      "mappedBy": "user"
     },
-    "company": {
-      "type": "string"
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "user"
     },
-    "school": {
-      "type": "string"
-    },
-    "facebook": {
-      "type": "string"
-    },
-    "instagram": {
-      "type": "string"
-    },
-    "linkedin": {
-      "type": "string"
-    },
-    "twitter": {
-      "type": "string"
+    "profile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::profile.profile",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

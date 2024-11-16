@@ -1,35 +1,35 @@
 {
-  "name": "clubbackend",
-  "private": true,
+  "name": "cluboneplug",
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
     "build": "strapi build",
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
+    "start": "strapi start",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.24.5",
-    "@strapi/plugin-users-permissions": "4.24.5",
-    "@strapi/plugin-i18n": "4.24.5",
-    "@strapi/plugin-cloud": "4.24.5",
-    "better-sqlite3": "8.6.0",
+    "@strapi/plugin-cloud": "5.0.6",
+    "@strapi/plugin-documentation": "^5.0.6",
+    "@strapi/plugin-users-permissions": "5.0.6",
+    "@strapi/strapi": "5.0.6",
+    "better-sqlite3": "9.4.3",
+    "fs-extra": "^10.0.0",
+    "mime-types": "^2.1.27",
+    "razorpay": "^2.9.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "styled-components": "5.3.3"
-  },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "90facd0f-e610-4d7c-9aca-6171e12fe456"
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "strapi": {
+    "uuid": "adc3b9e7-1767-4c99-a89a-61862f511dfd"
+  }
 }
