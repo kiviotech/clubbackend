@@ -111,7 +111,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::profile.profile",
-      "mappedBy": "users_permissions_user"
+      "mappedBy": "user"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-16T10:29:59.191Z"
+    "x-generation-date": "2024-11-20T11:12:03.153Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -16660,7 +16660,7 @@
                           "name": {
                             "type": "string"
                           },
-                          "users_permissions_user": {
+                          "user": {
                             "type": "object",
                             "properties": {
                               "id": {
@@ -20299,7 +20299,7 @@
                                   "name": {
                                     "type": "string"
                                   },
-                                  "users_permissions_user": {
+                                  "user": {
                                     "type": "object",
                                     "properties": {
                                       "id": {
@@ -23261,7 +23261,7 @@
                                                   "name": {
                                                     "type": "string"
                                                   },
-                                                  "users_permissions_user": {
+                                                  "user": {
                                                     "type": "object",
                                                     "properties": {
                                                       "id": {
@@ -27991,7 +27991,7 @@
                       "name": {
                         "type": "string"
                       },
-                      "users_permissions_user": {
+                      "user": {
                         "type": "object",
                         "properties": {
                           "id": {
@@ -31252,7 +31252,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "users_permissions_user": {
+                  "user": {
                     "type": "object",
                     "properties": {
                       "id": {
@@ -34820,7 +34820,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "users_permissions_user": {
+                  "user": {
                     "type": "object",
                     "properties": {
                       "id": {
@@ -39078,7 +39078,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "users_permissions_user": {
+                  "user": {
                     "type": "object",
                     "properties": {
                       "id": {
@@ -41889,7 +41889,7 @@
                                   "name": {
                                     "type": "string"
                                   },
-                                  "users_permissions_user": {
+                                  "user": {
                                     "type": "object",
                                     "properties": {
                                       "id": {
@@ -46221,7 +46221,7 @@
                               "name": {
                                 "type": "string"
                               },
-                              "users_permissions_user": {
+                              "user": {
                                 "type": "object",
                                 "properties": {
                                   "id": {
@@ -49192,7 +49192,7 @@
                                             "name": {
                                               "type": "string"
                                             },
-                                            "users_permissions_user": {
+                                            "user": {
                                               "type": "object",
                                               "properties": {
                                                 "id": {
@@ -52304,7 +52304,7 @@
                                                 "name": {
                                                   "type": "string"
                                                 },
-                                                "users_permissions_user": {
+                                                "user": {
                                                   "type": "object",
                                                   "properties": {
                                                     "id": {
@@ -55753,7 +55753,7 @@
                               "name": {
                                 "type": "string"
                               },
-                              "users_permissions_user": {
+                              "user": {
                                 "type": "object",
                                 "properties": {
                                   "id": {
@@ -58359,7 +58359,7 @@
                                                       "name": {
                                                         "type": "string"
                                                       },
-                                                      "users_permissions_user": {
+                                                      "user": {
                                                         "type": "object",
                                                         "properties": {
                                                           "id": {
@@ -59576,7 +59576,7 @@
               "name": {
                 "type": "string"
               },
-              "users_permissions_user": {
+              "user": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -60256,7 +60256,7 @@
           "name": {
             "type": "string"
           },
-          "users_permissions_user": {
+          "user": {
             "type": "object",
             "properties": {
               "id": {
@@ -62620,7 +62620,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "users_permissions_user": {
+                  "user": {
                     "type": "object",
                     "properties": {
                       "id": {
@@ -65519,7 +65519,7 @@
                               "name": {
                                 "type": "string"
                               },
-                              "users_permissions_user": {
+                              "user": {
                                 "type": "object",
                                 "properties": {
                                   "id": {
@@ -68949,7 +68949,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "users_permissions_user": {
+                  "user": {
                     "type": "object",
                     "properties": {
                       "id": {
@@ -72093,7 +72093,7 @@
                   "name": {
                     "type": "string"
                   },
-                  "users_permissions_user": {
+                  "user": {
                     "type": "object",
                     "properties": {
                       "id": {
@@ -75140,7 +75140,7 @@
                       "name": {
                         "type": "string"
                       },
-                      "users_permissions_user": {
+                      "user": {
                         "type": "object",
                         "properties": {
                           "id": {

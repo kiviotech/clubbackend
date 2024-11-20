@@ -1174,7 +1174,7 @@ export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
     >;
     username: Schema.Attribute.String;
     name: Schema.Attribute.String;
-    users_permissions_user: Schema.Attribute.Relation<
+    user: Schema.Attribute.Relation<
       'oneToOne',
       'plugin::users-permissions.user'
     >;
