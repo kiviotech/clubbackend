@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_details",
+  "info": {
+    "singularName": "payment-detail",
+    "pluralName": "payment-details",
+    "displayName": "Payment Detail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-detail.order-detail",
+      "inversedBy": "payment_detail"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "completed",
+        "failed",
+        "refunded"
+      ]
+    },
+    "paymentDate": {
+      "type": "datetime"
+    },
+    "razorpay_order_id": {
+      "type": "string"
+    },
+    "razorpay_payment_id": {
+      "type": "string"
+    },
+    "razorpay_signature": {
+      "type": "string"
+    }
+  }
+}

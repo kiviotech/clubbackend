@@ -101,16 +101,16 @@
       "target": "api::shipping-info.shipping-info",
       "mappedBy": "user"
     },
-    "orders": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order.order",
-      "mappedBy": "user"
-    },
     "profile": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::profile.profile",
+      "mappedBy": "user"
+    },
+    "order_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-detail.order-detail",
       "mappedBy": "user"
     }
   }

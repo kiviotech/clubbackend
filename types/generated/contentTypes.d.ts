@@ -484,8 +484,11 @@ export interface PluginUsersPermissionsUser
       'oneToMany',
       'api::shipping-info.shipping-info'
     >;
-    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
     profile: Schema.Attribute.Relation<'oneToOne', 'api::profile.profile'>;
+    order_details: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::order-detail.order-detail'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -562,30 +565,6 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::article.article'
     >;
-  };
-}
-
-export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
-  collectionName: 'authors';
-  info: {
-    singularName: 'author';
-    pluralName: 'authors';
-    displayName: 'Author';
-    description: 'Create authors for your content';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
   };
 }
 
@@ -758,33 +737,6 @@ export interface ApiBrandStoreBrandStore extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
-    description: 'Organize your content into categories';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    >;
-  };
-}
-
 export interface ApiChatChat extends Struct.CollectionTypeSchema {
   collectionName: 'chats';
   info: {
@@ -802,7 +754,6 @@ export interface ApiChatChat extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
-    order: Schema.Attribute.Relation<'oneToOne', 'api::order.order'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -915,7 +866,6 @@ export interface ApiEscrowEscrow extends Struct.CollectionTypeSchema {
     total_amount: Schema.Attribute.Decimal;
     level: Schema.Attribute.Enumeration<['pending', 'approved']>;
     request: Schema.Attribute.Relation<'oneToOne', 'api::request.request'>;
-    payment: Schema.Attribute.Relation<'oneToOne', 'api::payment.payment'>;
     milestone: Schema.Attribute.Relation<
       'oneToOne',
       'api::milestone.milestone'
@@ -992,35 +942,39 @@ export interface ApiMilestoneMilestone extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
-  collectionName: 'orders';
+export interface ApiOrderDetailOrderDetail extends Struct.CollectionTypeSchema {
+  collectionName: 'order_details';
   info: {
-    singularName: 'order';
-    pluralName: 'orders';
-    displayName: 'Order';
-    description: '';
+    singularName: 'order-detail';
+    pluralName: 'order-details';
+    displayName: 'Order Detail';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    level: Schema.Attribute.Enumeration<['approved', 'pending']>;
-    total: Schema.Attribute.Decimal;
-    razorpayOrderId: Schema.Attribute.Text;
-    razorpayPaymentId: Schema.Attribute.Text;
-    razorpaySignature: Schema.Attribute.Text;
-    order_items: Schema.Attribute.Relation<
+    orderItems: Schema.Attribute.Relation<
       'oneToMany',
       'api::order-item.order-item'
     >;
-    payment: Schema.Attribute.Relation<'oneToOne', 'api::payment.payment'>;
-    user: Schema.Attribute.Relation<
-      'manyToOne',
-      'plugin::users-permissions.user'
+    total: Schema.Attribute.Decimal;
+    level: Schema.Attribute.Enumeration<
+      ['pending', 'processing', 'shipped', 'delivered', 'cancelled']
     >;
     shipping_info: Schema.Attribute.Relation<
       'oneToOne',
       'api::shipping-info.shipping-info'
+    >;
+    user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    razorpayOrderId: Schema.Attribute.Text;
+    razorpayPaymentId: Schema.Attribute.Text;
+    razorpaySignature: Schema.Attribute.Text;
+    payment_detail: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::payment-detail.payment-detail'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1030,7 +984,10 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::order-detail.order-detail'
+    >;
   };
 }
 
@@ -1050,7 +1007,10 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
     price: Schema.Attribute.Decimal;
     subtotal: Schema.Attribute.Decimal;
     product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
-    order: Schema.Attribute.Relation<'manyToOne', 'api::order.order'>;
+    orderDetail: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::order-detail.order-detail'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1066,37 +1026,26 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
-  collectionName: 'payments';
+export interface ApiPaymentDetailPaymentDetail
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'payment_details';
   info: {
-    singularName: 'payment';
-    pluralName: 'payments';
-    displayName: 'Payment';
-    description: '';
+    singularName: 'payment-detail';
+    pluralName: 'payment-details';
+    displayName: 'Payment Detail';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    payment_method: Schema.Attribute.Enumeration<
-      [
-        'Payment Method',
-        'Credit Card',
-        'Debit Card',
-        'PayPal',
-        'Bank Transfer',
-        'Cash',
-        'Mobile Payment',
-        'Gift Card',
-        'Cryptocurrency',
-        'Check',
-        'Digital Wallet',
-      ]
+    order_detail: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::order-detail.order-detail'
     >;
     amount: Schema.Attribute.Decimal;
-    escrow: Schema.Attribute.Relation<'oneToOne', 'api::escrow.escrow'>;
-    level: Schema.Attribute.Enumeration<['sent', 'pending', 'failed']>;
-    order: Schema.Attribute.Relation<'oneToOne', 'api::order.order'>;
+    level: Schema.Attribute.Enumeration<
+      ['pending', 'completed', 'failed', 'refunded']
+    >;
     paymentDate: Schema.Attribute.DateTime;
     razorpay_order_id: Schema.Attribute.String;
     razorpay_payment_id: Schema.Attribute.String;
@@ -1111,7 +1060,7 @@ export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::payment.payment'
+      'api::payment-detail.payment-detail'
     >;
   };
 }
@@ -1729,22 +1678,20 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
-      'api::author.author': ApiAuthorAuthor;
       'api::bid.bid': ApiBidBid;
       'api::brand.brand': ApiBrandBrand;
       'api::brand-collab.brand-collab': ApiBrandCollabBrandCollab;
       'api::brand-product.brand-product': ApiBrandProductBrandProduct;
       'api::brand-store.brand-store': ApiBrandStoreBrandStore;
-      'api::category.category': ApiCategoryCategory;
       'api::chat.chat': ApiChatChat;
       'api::deliverable.deliverable': ApiDeliverableDeliverable;
       'api::designer-showcase.designer-showcase': ApiDesignerShowcaseDesignerShowcase;
       'api::escrow.escrow': ApiEscrowEscrow;
       'api::global.global': ApiGlobalGlobal;
       'api::milestone.milestone': ApiMilestoneMilestone;
-      'api::order.order': ApiOrderOrder;
+      'api::order-detail.order-detail': ApiOrderDetailOrderDetail;
       'api::order-item.order-item': ApiOrderItemOrderItem;
-      'api::payment.payment': ApiPaymentPayment;
+      'api::payment-detail.payment-detail': ApiPaymentDetailPaymentDetail;
       'api::product.product': ApiProductProduct;
       'api::profile.profile': ApiProfileProfile;
       'api::request.request': ApiRequestRequest;

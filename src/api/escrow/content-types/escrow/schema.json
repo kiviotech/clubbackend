@@ -28,12 +28,6 @@
       "target": "api::request.request",
       "inversedBy": "escrow"
     },
-    "payment": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::payment.payment",
-      "inversedBy": "escrow"
-    },
     "milestone": {
       "type": "relation",
       "relation": "oneToOne",

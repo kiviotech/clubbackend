@@ -27,11 +27,11 @@
       "target": "api::product.product",
       "inversedBy": "order_items"
     },
-    "order": {
+    "orderDetail": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::order.order",
-      "inversedBy": "order_items"
+      "target": "api::order-detail.order-detail",
+      "inversedBy": "orderItems"
     }
   }
 }
