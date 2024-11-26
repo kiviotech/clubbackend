@@ -489,6 +489,10 @@ export interface PluginUsersPermissionsUser
       'oneToMany',
       'api::order-detail.order-detail'
     >;
+    design_requests: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::design-request.design-request'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -565,6 +569,30 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::article.article'
     >;
+  };
+}
+
+export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
+  collectionName: 'authors';
+  info: {
+    singularName: 'author';
+    pluralName: 'authors';
+    displayName: 'Author';
+    description: 'Create authors for your content';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::author.author'>;
   };
 }
 
@@ -737,6 +765,33 @@ export interface ApiBrandStoreBrandStore extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'Category';
+    description: 'Organize your content into categories';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
+  };
+}
+
 export interface ApiChatChat extends Struct.CollectionTypeSchema {
   collectionName: 'chats';
   info: {
@@ -795,6 +850,53 @@ export interface ApiDeliverableDeliverable extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::deliverable.deliverable'
+    >;
+  };
+}
+
+export interface ApiDesignRequestDesignRequest
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'design_requests';
+  info: {
+    singularName: 'design-request';
+    pluralName: 'design-requests';
+    displayName: 'Design Request';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    fabric_preferences: Schema.Attribute.Enumeration<
+      ['Cotton', 'Polyester', 'Silk']
+    >;
+    color_preferences: Schema.Attribute.String;
+    deadline: Schema.Attribute.Date;
+    budget: Schema.Attribute.Decimal;
+    bust: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
+    waist: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
+    hip: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
+    weight: Schema.Attribute.Integer;
+    special_instructions: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    users: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    height: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::design-request.design-request'
     >;
   };
 }
@@ -1678,13 +1780,16 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
+      'api::author.author': ApiAuthorAuthor;
       'api::bid.bid': ApiBidBid;
       'api::brand.brand': ApiBrandBrand;
       'api::brand-collab.brand-collab': ApiBrandCollabBrandCollab;
       'api::brand-product.brand-product': ApiBrandProductBrandProduct;
       'api::brand-store.brand-store': ApiBrandStoreBrandStore;
+      'api::category.category': ApiCategoryCategory;
       'api::chat.chat': ApiChatChat;
       'api::deliverable.deliverable': ApiDeliverableDeliverable;
+      'api::design-request.design-request': ApiDesignRequestDesignRequest;
       'api::designer-showcase.designer-showcase': ApiDesignerShowcaseDesignerShowcase;
       'api::escrow.escrow': ApiEscrowEscrow;
       'api::global.global': ApiGlobalGlobal;

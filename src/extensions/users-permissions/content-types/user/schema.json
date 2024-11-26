@@ -112,6 +112,12 @@
       "relation": "oneToMany",
       "target": "api::order-detail.order-detail",
       "mappedBy": "user"
+    },
+    "design_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::design-request.design-request",
+      "mappedBy": "users"
     }
   }
 }

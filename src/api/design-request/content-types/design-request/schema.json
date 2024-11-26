@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "design_requests",
+  "info": {
+    "singularName": "design-request",
+    "pluralName": "design-requests",
+    "displayName": "Design Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "fabric_preferences": {
+      "type": "enumeration",
+      "enum": [
+        "Cotton",
+        "Polyester",
+        "Silk"
+      ]
+    },
+    "color_preferences": {
+      "type": "string"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "budget": {
+      "type": "decimal"
+    },
+    "bust": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "waist": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "hip": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "weight": {
+      "type": "integer"
+    },
+    "special_instructions": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "design_requests"
+    },
+    "height": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    }
+  }
+}
