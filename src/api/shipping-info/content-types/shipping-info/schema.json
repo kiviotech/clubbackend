@@ -7,7 +7,7 @@
     "displayName": "Shipping_info"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

@@ -864,7 +864,7 @@ export interface ApiDesignRequestDesignRequest
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     title: Schema.Attribute.String;
@@ -1052,7 +1052,7 @@ export interface ApiOrderDetailOrderDetail extends Struct.CollectionTypeSchema {
     displayName: 'Order Detail';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     orderItems: Schema.Attribute.Relation<
@@ -1102,7 +1102,7 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     quantity: Schema.Attribute.Integer;
@@ -1176,7 +1176,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     name: Schema.Attribute.String;
@@ -1220,15 +1220,13 @@ export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    profile_img: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    >;
     username: Schema.Attribute.String;
     name: Schema.Attribute.String;
     user: Schema.Attribute.Relation<
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1338,7 +1336,7 @@ export interface ApiShippingInfoShippingInfo
     displayName: 'Shipping_info';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     Fullname: Schema.Attribute.String;
