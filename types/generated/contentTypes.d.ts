@@ -1113,6 +1113,7 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::order-detail.order-detail'
     >;
+    size: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

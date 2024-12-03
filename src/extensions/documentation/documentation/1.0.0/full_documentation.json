@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-03T10:56:56.524Z"
+    "x-generation-date": "2024-12-03T11:22:00.485Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -17531,6 +17531,9 @@
                                       }
                                     }
                                   },
+                                  "size": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -21721,6 +21724,9 @@
                                       }
                                     }
                                   },
+                                  "size": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -25693,6 +25699,9 @@
                             }
                           }
                         }
+                      },
+                      "size": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -29819,6 +29828,9 @@
                                   }
                                 }
                               },
+                              "size": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -33398,6 +33410,9 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "size": {
+                            "type": "string"
                           },
                           "createdAt": {
                             "type": "string",
@@ -37274,6 +37289,9 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "size": {
+                            "type": "string"
                           },
                           "createdAt": {
                             "type": "string",
@@ -41924,6 +41942,9 @@
                               }
                             }
                           },
+                          "size": {
+                            "type": "string"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -45533,6 +45554,9 @@
                               }
                             }
                           },
+                          "size": {
+                            "type": "string"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -48883,6 +48907,9 @@
                                         "type": "string"
                                       }
                                     }
+                                  },
+                                  "size": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -53303,6 +53330,9 @@
                                           }
                                         }
                                       },
+                                      "size": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -57581,6 +57611,9 @@
                     }
                   }
                 },
+                "size": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -57796,6 +57829,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "size": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -60943,6 +60979,9 @@
                         }
                       }
                     },
+                    "size": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -61152,6 +61191,9 @@
                 "type": "string"
               }
             }
+          },
+          "size": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -62497,6 +62539,9 @@
                           "type": "string"
                         }
                       }
+                    },
+                    "size": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -67598,6 +67643,9 @@
                               }
                             }
                           },
+                          "size": {
+                            "type": "string"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -71139,6 +71187,9 @@
                               }
                             }
                           },
+                          "size": {
+                            "type": "string"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -74496,6 +74547,9 @@
                                             "type": "string"
                                           }
                                         }
+                                      },
+                                      "size": {
+                                        "type": "string"
                                       },
                                       "createdAt": {
                                         "type": "string",
@@ -78235,6 +78289,9 @@
                               }
                             }
                           },
+                          "size": {
+                            "type": "string"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -81698,6 +81755,9 @@
                               }
                             }
                           },
+                          "size": {
+                            "type": "string"
+                          },
                           "createdAt": {
                             "type": "string",
                             "format": "date-time"
@@ -85063,6 +85123,9 @@
                                     "type": "string"
                                   }
                                 }
+                              },
+                              "size": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -88963,6 +89026,9 @@
                           }
                         }
                       }
+                    },
+                    "size": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",

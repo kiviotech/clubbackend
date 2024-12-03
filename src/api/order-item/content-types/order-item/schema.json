@@ -32,6 +32,9 @@
       "relation": "manyToOne",
       "target": "api::order-detail.order-detail",
       "inversedBy": "orderItems"
+    },
+    "size": {
+      "type": "string"
     }
   }
 }
