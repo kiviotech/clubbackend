@@ -1193,6 +1193,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::order-item.order-item'
     >;
+    sizes: Schema.Attribute.Relation<'oneToMany', 'api::size.size'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1398,6 +1399,34 @@ export interface ApiShowcaseRatingShowcaseRating
       'oneToMany',
       'api::showcase-rating.showcase-rating'
     >;
+  };
+}
+
+export interface ApiSizeSize extends Struct.CollectionTypeSchema {
+  collectionName: 'sizes';
+  info: {
+    singularName: 'size';
+    pluralName: 'sizes';
+    displayName: 'Size';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
+    number_of_items: Schema.Attribute.Integer;
+    in_stock: Schema.Attribute.Boolean;
+    size: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L', 'XL']>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::size.size'>;
   };
 }
 
@@ -1801,6 +1830,7 @@ declare module '@strapi/strapi' {
       'api::review.review': ApiReviewReview;
       'api::shipping-info.shipping-info': ApiShippingInfoShippingInfo;
       'api::showcase-rating.showcase-rating': ApiShowcaseRatingShowcaseRating;
+      'api::size.size': ApiSizeSize;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
