@@ -1211,7 +1211,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     in_stock: Schema.Attribute.Boolean;
     brand: Schema.Attribute.Relation<'manyToOne', 'api::brand.brand'>;
     product_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
+      'images' | 'files' | 'videos' | 'audios',
+      true
     >;
     discount: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     on_sale: Schema.Attribute.Boolean;
