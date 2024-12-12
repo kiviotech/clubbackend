@@ -821,6 +821,31 @@ export interface ApiChatChat extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCouponCoupon extends Struct.CollectionTypeSchema {
+  collectionName: 'coupons';
+  info: {
+    singularName: 'coupon';
+    pluralName: 'coupons';
+    displayName: 'Coupon';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code: Schema.Attribute.String;
+    discount_percentage: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::coupon.coupon'>;
+  };
+}
+
 export interface ApiDeliverableDeliverable extends Struct.CollectionTypeSchema {
   collectionName: 'deliverables';
   info: {
@@ -1816,6 +1841,7 @@ declare module '@strapi/strapi' {
       'api::brand-store.brand-store': ApiBrandStoreBrandStore;
       'api::category.category': ApiCategoryCategory;
       'api::chat.chat': ApiChatChat;
+      'api::coupon.coupon': ApiCouponCoupon;
       'api::deliverable.deliverable': ApiDeliverableDeliverable;
       'api::design-request.design-request': ApiDesignRequestDesignRequest;
       'api::designer-showcase.designer-showcase': ApiDesignerShowcaseDesignerShowcase;
