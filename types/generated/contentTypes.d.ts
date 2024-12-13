@@ -1221,6 +1221,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::order-item.order-item'
     >;
     sizes: Schema.Attribute.Relation<'oneToMany', 'api::size.size'>;
+    product_Details: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

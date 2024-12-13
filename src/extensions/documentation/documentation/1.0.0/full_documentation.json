@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-12T12:16:03.539Z"
+    "x-generation-date": "2024-12-13T09:21:02.926Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -17976,6 +17976,9 @@
                                           }
                                         }
                                       },
+                                      "product_Details": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -22172,6 +22175,9 @@
                                           }
                                         }
                                       },
+                                      "product_Details": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -26364,6 +26370,9 @@
                     }
                   }
                 },
+                "product_Details": {
+                  "type": "string"
+                },
                 "createdAt": {
                   "type": "string",
                   "format": "date-time"
@@ -30282,6 +30291,9 @@
                                       }
                                     }
                                   },
+                                  "product_Details": {
+                                    "type": "string"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -33867,6 +33879,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "product_Details": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -37749,6 +37764,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "product_Details": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -42864,6 +42882,9 @@
                                   }
                                 }
                               },
+                              "product_Details": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -46479,6 +46500,9 @@
                                   }
                                 }
                               },
+                              "product_Details": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -49835,6 +49859,9 @@
                                             }
                                           }
                                         }
+                                      },
+                                      "product_Details": {
+                                        "type": "string"
                                       },
                                       "createdAt": {
                                         "type": "string",
@@ -54261,6 +54288,9 @@
                                               }
                                             }
                                           },
+                                          "product_Details": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -56487,6 +56517,9 @@
                           }
                         }
                       }
+                    },
+                    "product_Details": {
+                      "type": "string"
                     },
                     "createdAt": {
                       "type": "string",
@@ -62129,6 +62162,9 @@
                   }
                 }
               },
+              "product_Details": {
+                "type": "string"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -63479,6 +63515,9 @@
                               }
                             }
                           }
+                        },
+                        "product_Details": {
+                          "type": "string"
                         },
                         "createdAt": {
                           "type": "string",
@@ -65816,6 +65855,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "product_Details": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -68802,6 +68844,9 @@
                         }
                       }
                     },
+                    "product_Details": {
+                      "type": "string"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -69335,6 +69380,9 @@
                 }
               }
             }
+          },
+          "product_Details": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -72138,6 +72186,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "product_Details": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -75502,6 +75553,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "product_Details": {
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -79247,6 +79301,9 @@
                                   }
                                 }
                               },
+                              "product_Details": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -82716,6 +82773,9 @@
                                   }
                                 }
                               },
+                              "product_Details": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -86087,6 +86147,9 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "product_Details": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -90206,6 +90269,9 @@
                     }
                   }
                 }
+              },
+              "product_Details": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",

@@ -59,6 +59,9 @@
       "relation": "oneToMany",
       "target": "api::size.size",
       "mappedBy": "product"
+    },
+    "product_Details": {
+      "type": "text"
     }
   }
 }
