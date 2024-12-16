@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order-detail",
     "pluralName": "order-details",
-    "displayName": "Order Detail"
+    "displayName": "Order Detail",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -55,6 +56,12 @@
       "relation": "oneToOne",
       "target": "api::payment-detail.payment-detail",
       "mappedBy": "order_detail"
+    },
+    "coupon": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::coupon.coupon",
+      "inversedBy": "order_detail"
     }
   }
 }

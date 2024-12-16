@@ -834,6 +834,10 @@ export interface ApiCouponCoupon extends Struct.CollectionTypeSchema {
   attributes: {
     code: Schema.Attribute.String;
     discount_percentage: Schema.Attribute.Integer;
+    order_detail: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::order-detail.order-detail'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1075,6 +1079,7 @@ export interface ApiOrderDetailOrderDetail extends Struct.CollectionTypeSchema {
     singularName: 'order-detail';
     pluralName: 'order-details';
     displayName: 'Order Detail';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1103,6 +1108,7 @@ export interface ApiOrderDetailOrderDetail extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::payment-detail.payment-detail'
     >;
+    coupon: Schema.Attribute.Relation<'oneToOne', 'api::coupon.coupon'>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

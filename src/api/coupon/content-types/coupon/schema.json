@@ -16,6 +16,12 @@
     },
     "discount_percentage": {
       "type": "integer"
+    },
+    "order_detail": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-detail.order-detail",
+      "mappedBy": "coupon"
     }
   }
 }
