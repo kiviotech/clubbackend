@@ -22,7 +22,8 @@
       "type": "decimal"
     },
     "in_stock": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "brand": {
       "type": "relation",
