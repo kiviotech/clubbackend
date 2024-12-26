@@ -1450,7 +1450,7 @@ export interface ApiSizeSize extends Struct.CollectionTypeSchema {
   attributes: {
     product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     number_of_items: Schema.Attribute.Integer;
-    in_stock: Schema.Attribute.Boolean;
+    in_stock: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     size: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L', 'XL']>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

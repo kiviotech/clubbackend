@@ -22,7 +22,8 @@
       "type": "integer"
     },
     "in_stock": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "size": {
       "type": "enumeration",
