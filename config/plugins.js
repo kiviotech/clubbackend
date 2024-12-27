@@ -24,7 +24,7 @@ module.exports = ({ env }) => ({
     "users-permissions": {
       config: {
         jwt: {
-          expiresIn: "7d", // Set token expiration to 1 minute for testing
+          expiresIn: "30d", // Set token expiration to 1 minute for testing
         },
       },
     },
