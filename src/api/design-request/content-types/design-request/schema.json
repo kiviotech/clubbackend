@@ -93,6 +93,9 @@
         "M",
         "L"
       ]
+    },
+    "contactNumber": {
+      "type": "integer"
     }
   }
 }

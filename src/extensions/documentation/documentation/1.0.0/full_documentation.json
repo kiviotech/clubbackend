@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-30T05:42:30.586Z"
+    "x-generation-date": "2024-12-30T09:58:35.391Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -18595,6 +18595,9 @@
                                 "L"
                               ]
                             },
+                            "contactNumber": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -22873,6 +22876,9 @@
                                 "L"
                               ]
                             },
+                            "contactNumber": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -26046,6 +26052,9 @@
                                             "M",
                                             "L"
                                           ]
+                                        },
+                                        "contactNumber": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -31147,6 +31156,9 @@
                             "L"
                           ]
                         },
+                        "contactNumber": {
+                          "type": "integer"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -34814,6 +34826,9 @@
                         "M",
                         "L"
                       ]
+                    },
+                    "contactNumber": {
+                      "type": "integer"
                     },
                     "createdAt": {
                       "type": "string",
@@ -38779,6 +38794,9 @@
                         "L"
                       ]
                     },
+                    "contactNumber": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -41993,6 +42011,9 @@
                                 "L"
                               ]
                             },
+                            "contactNumber": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -43531,6 +43552,9 @@
                   "M",
                   "L"
                 ]
+              },
+              "contactNumber": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -47034,6 +47058,9 @@
                         "L"
                       ]
                     },
+                    "contactNumber": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -47149,6 +47176,9 @@
               "M",
               "L"
             ]
+          },
+          "contactNumber": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -50731,6 +50761,9 @@
                         "L"
                       ]
                     },
+                    "contactNumber": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -54169,6 +54202,9 @@
                                 "M",
                                 "L"
                               ]
+                            },
+                            "contactNumber": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -58677,6 +58713,9 @@
                                     "L"
                                   ]
                                 },
+                                "contactNumber": {
+                                  "type": "integer"
+                                },
                                 "createdAt": {
                                   "type": "string",
                                   "format": "date-time"
@@ -62170,6 +62209,9 @@
                                       "L"
                                     ]
                                   },
+                                  "contactNumber": {
+                                    "type": "integer"
+                                  },
                                   "createdAt": {
                                     "type": "string",
                                     "format": "date-time"
@@ -65630,6 +65672,9 @@
                                           "M",
                                           "L"
                                         ]
+                                      },
+                                      "contactNumber": {
+                                        "type": "integer"
                                       },
                                       "createdAt": {
                                         "type": "string",
@@ -69382,6 +69427,9 @@
                                 "L"
                               ]
                             },
+                            "contactNumber": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -72470,6 +72518,9 @@
                                                 "M",
                                                 "L"
                                               ]
+                                            },
+                                            "contactNumber": {
+                                              "type": "integer"
                                             },
                                             "createdAt": {
                                               "type": "string",
@@ -76993,6 +77044,9 @@
                         "L"
                       ]
                     },
+                    "contactNumber": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -80438,6 +80492,9 @@
                                     "M",
                                     "L"
                                   ]
+                                },
+                                "contactNumber": {
+                                  "type": "integer"
                                 },
                                 "createdAt": {
                                   "type": "string",
@@ -84265,6 +84322,9 @@
                         "L"
                       ]
                     },
+                    "contactNumber": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -87816,6 +87876,9 @@
                         "L"
                       ]
                     },
+                    "contactNumber": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -91270,6 +91333,9 @@
                             "L"
                           ]
                         },
+                        "contactNumber": {
+                          "type": "integer"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -94370,6 +94436,9 @@
                                           "M",
                                           "L"
                                         ]
+                                      },
+                                      "contactNumber": {
+                                        "type": "integer"
                                       },
                                       "createdAt": {
                                         "type": "string",

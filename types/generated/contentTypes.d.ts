@@ -915,6 +915,7 @@ export interface ApiDesignRequestDesignRequest
       'plugin::users-permissions.user'
     >;
     height: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
+    contactNumber: Schema.Attribute.Integer;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
