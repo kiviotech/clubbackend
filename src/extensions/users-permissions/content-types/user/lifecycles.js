@@ -1,8 +1,11 @@
+console.log('afterCreate Lifecycle Triggered');
 module.exports = {
     lifecycles: {
       async afterCreate(event) {
         const { result } = event;
         const { email, username } = result;
+        strapi.log.info('User lifecycles.js loaded');
+
   
         console.log('afterCreate Lifecycle Triggered');
         console.log(`User created with email: ${email}, username: ${username}`);

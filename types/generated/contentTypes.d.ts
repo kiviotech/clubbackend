@@ -904,18 +904,19 @@ export interface ApiDesignRequestDesignRequest
     color_preferences: Schema.Attribute.String;
     deadline: Schema.Attribute.Date;
     budget: Schema.Attribute.Decimal;
-    bust: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
-    waist: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
-    hip: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
-    weight: Schema.Attribute.Integer;
     special_instructions: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
     users: Schema.Attribute.Relation<
       'manyToOne',
       'plugin::users-permissions.user'
     >;
-    height: Schema.Attribute.Enumeration<['XS', 'S', 'M', 'L']>;
     contactNumber: Schema.Attribute.Integer;
+    size: Schema.Attribute.String;
+    chest: Schema.Attribute.String;
+    waist: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

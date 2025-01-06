@@ -35,42 +35,12 @@
     "budget": {
       "type": "decimal"
     },
-    "bust": {
-      "type": "enumeration",
-      "enum": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ]
-    },
-    "waist": {
-      "type": "enumeration",
-      "enum": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ]
-    },
-    "hip": {
-      "type": "enumeration",
-      "enum": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ]
-    },
-    "weight": {
-      "type": "integer"
-    },
     "special_instructions": {
       "type": "text"
     },
     "image": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images",
@@ -85,17 +55,17 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "design_requests"
     },
-    "height": {
-      "type": "enumeration",
-      "enum": [
-        "XS",
-        "S",
-        "M",
-        "L"
-      ]
-    },
     "contactNumber": {
       "type": "integer"
+    },
+    "size": {
+      "type": "string"
+    },
+    "chest": {
+      "type": "string"
+    },
+    "waist": {
+      "type": "string"
     }
   }
 }
