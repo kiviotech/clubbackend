@@ -66,6 +66,12 @@
     },
     "waist": {
       "type": "string"
+    },
+    "custom_design": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::custom-design.custom-design",
+      "inversedBy": "design_requests"
     }
   }
 }

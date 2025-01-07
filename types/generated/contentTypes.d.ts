@@ -850,6 +850,41 @@ export interface ApiCouponCoupon extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCustomDesignCustomDesign
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'custom_designs';
+  info: {
+    singularName: 'custom-design';
+    pluralName: 'custom-designs';
+    displayName: 'CustomDesign';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    design_requests: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::design-request.design-request'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::custom-design.custom-design'
+    >;
+  };
+}
+
 export interface ApiDeliverableDeliverable extends Struct.CollectionTypeSchema {
   collectionName: 'deliverables';
   info: {
@@ -917,6 +952,10 @@ export interface ApiDesignRequestDesignRequest
     size: Schema.Attribute.String;
     chest: Schema.Attribute.String;
     waist: Schema.Attribute.String;
+    custom_design: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::custom-design.custom-design'
+    >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -1852,6 +1891,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::chat.chat': ApiChatChat;
       'api::coupon.coupon': ApiCouponCoupon;
+      'api::custom-design.custom-design': ApiCustomDesignCustomDesign;
       'api::deliverable.deliverable': ApiDeliverableDeliverable;
       'api::design-request.design-request': ApiDesignRequestDesignRequest;
       'api::designer-showcase.designer-showcase': ApiDesignerShowcaseDesignerShowcase;

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "custom_designs",
+  "info": {
+    "singularName": "custom-design",
+    "pluralName": "custom-designs",
+    "displayName": "CustomDesign",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string"
+    },
+    "design_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::design-request.design-request",
+      "mappedBy": "custom_design"
+    }
+  }
+}
