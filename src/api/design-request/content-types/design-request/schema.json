@@ -18,14 +18,6 @@
     "description": {
       "type": "text"
     },
-    "fabric_preferences": {
-      "type": "enumeration",
-      "enum": [
-        "Cotton",
-        "Polyester",
-        "Silk"
-      ]
-    },
     "color_preferences": {
       "type": "string"
     },

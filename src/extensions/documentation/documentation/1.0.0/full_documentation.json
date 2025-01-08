@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-08T05:29:15.590Z"
+    "x-generation-date": "2025-01-08T06:54:16.753Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -18900,14 +18900,6 @@
                             "description": {
                               "type": "string"
                             },
-                            "fabric_preferences": {
-                              "type": "string",
-                              "enum": [
-                                "Cotton",
-                                "Polyester",
-                                "Silk"
-                              ]
-                            },
                             "color_preferences": {
                               "type": "string"
                             },
@@ -23365,14 +23357,6 @@
                             "description": {
                               "type": "string"
                             },
-                            "fabric_preferences": {
-                              "type": "string",
-                              "enum": [
-                                "Cotton",
-                                "Polyester",
-                                "Silk"
-                              ]
-                            },
                             "color_preferences": {
                               "type": "string"
                             },
@@ -26725,14 +26709,6 @@
                                         },
                                         "description": {
                                           "type": "string"
-                                        },
-                                        "fabric_preferences": {
-                                          "type": "string",
-                                          "enum": [
-                                            "Cotton",
-                                            "Polyester",
-                                            "Silk"
-                                          ]
                                         },
                                         "color_preferences": {
                                           "type": "string"
@@ -32013,14 +31989,6 @@
                         "description": {
                           "type": "string"
                         },
-                        "fabric_preferences": {
-                          "type": "string",
-                          "enum": [
-                            "Cotton",
-                            "Polyester",
-                            "Silk"
-                          ]
-                        },
                         "color_preferences": {
                           "type": "string"
                         },
@@ -35867,14 +35835,6 @@
                     },
                     "description": {
                       "type": "string"
-                    },
-                    "fabric_preferences": {
-                      "type": "string",
-                      "enum": [
-                        "Cotton",
-                        "Polyester",
-                        "Silk"
-                      ]
                     },
                     "color_preferences": {
                       "type": "string"
@@ -40019,14 +39979,6 @@
                     "description": {
                       "type": "string"
                     },
-                    "fabric_preferences": {
-                      "type": "string",
-                      "enum": [
-                        "Cotton",
-                        "Polyester",
-                        "Silk"
-                      ]
-                    },
                     "color_preferences": {
                       "type": "string"
                     },
@@ -43420,14 +43372,6 @@
                             "description": {
                               "type": "string"
                             },
-                            "fabric_preferences": {
-                              "type": "string",
-                              "enum": [
-                                "Cotton",
-                                "Polyester",
-                                "Silk"
-                              ]
-                            },
                             "color_preferences": {
                               "type": "string"
                             },
@@ -45008,14 +44952,6 @@
                 },
                 "description": {
                   "type": "string"
-                },
-                "fabric_preferences": {
-                  "type": "string",
-                  "enum": [
-                    "Cotton",
-                    "Polyester",
-                    "Silk"
-                  ]
                 },
                 "color_preferences": {
                   "type": "string"
@@ -49115,14 +49051,6 @@
               "description": {
                 "type": "string"
               },
-              "fabric_preferences": {
-                "type": "string",
-                "enum": [
-                  "Cotton",
-                  "Polyester",
-                  "Silk"
-                ]
-              },
               "color_preferences": {
                 "type": "string"
               },
@@ -49255,14 +49183,6 @@
           },
           "description": {
             "type": "string"
-          },
-          "fabric_preferences": {
-            "type": "string",
-            "enum": [
-              "Cotton",
-              "Polyester",
-              "Silk"
-            ]
           },
           "color_preferences": {
             "type": "string"
@@ -52458,14 +52378,6 @@
                     },
                     "description": {
                       "type": "string"
-                    },
-                    "fabric_preferences": {
-                      "type": "string",
-                      "enum": [
-                        "Cotton",
-                        "Polyester",
-                        "Silk"
-                      ]
                     },
                     "color_preferences": {
                       "type": "string"
@@ -56357,14 +56269,6 @@
                     "description": {
                       "type": "string"
                     },
-                    "fabric_preferences": {
-                      "type": "string",
-                      "enum": [
-                        "Cotton",
-                        "Polyester",
-                        "Silk"
-                      ]
-                    },
                     "color_preferences": {
                       "type": "string"
                     },
@@ -59982,14 +59886,6 @@
                             },
                             "description": {
                               "type": "string"
-                            },
-                            "fabric_preferences": {
-                              "type": "string",
-                              "enum": [
-                                "Cotton",
-                                "Polyester",
-                                "Silk"
-                              ]
                             },
                             "color_preferences": {
                               "type": "string"
@@ -64677,14 +64573,6 @@
                                 "description": {
                                   "type": "string"
                                 },
-                                "fabric_preferences": {
-                                  "type": "string",
-                                  "enum": [
-                                    "Cotton",
-                                    "Polyester",
-                                    "Silk"
-                                  ]
-                                },
                                 "color_preferences": {
                                   "type": "string"
                                 },
@@ -68357,14 +68245,6 @@
                                   "description": {
                                     "type": "string"
                                   },
-                                  "fabric_preferences": {
-                                    "type": "string",
-                                    "enum": [
-                                      "Cotton",
-                                      "Polyester",
-                                      "Silk"
-                                    ]
-                                  },
                                   "color_preferences": {
                                     "type": "string"
                                   },
@@ -72004,14 +71884,6 @@
                                       },
                                       "description": {
                                         "type": "string"
-                                      },
-                                      "fabric_preferences": {
-                                        "type": "string",
-                                        "enum": [
-                                          "Cotton",
-                                          "Polyester",
-                                          "Silk"
-                                        ]
                                       },
                                       "color_preferences": {
                                         "type": "string"
@@ -75943,14 +75815,6 @@
                             "description": {
                               "type": "string"
                             },
-                            "fabric_preferences": {
-                              "type": "string",
-                              "enum": [
-                                "Cotton",
-                                "Polyester",
-                                "Silk"
-                              ]
-                            },
                             "color_preferences": {
                               "type": "string"
                             },
@@ -79218,14 +79082,6 @@
                                             },
                                             "description": {
                                               "type": "string"
-                                            },
-                                            "fabric_preferences": {
-                                              "type": "string",
-                                              "enum": [
-                                                "Cotton",
-                                                "Polyester",
-                                                "Silk"
-                                              ]
                                             },
                                             "color_preferences": {
                                               "type": "string"
@@ -83928,14 +83784,6 @@
                     "description": {
                       "type": "string"
                     },
-                    "fabric_preferences": {
-                      "type": "string",
-                      "enum": [
-                        "Cotton",
-                        "Polyester",
-                        "Silk"
-                      ]
-                    },
                     "color_preferences": {
                       "type": "string"
                     },
@@ -87560,14 +87408,6 @@
                                 },
                                 "description": {
                                   "type": "string"
-                                },
-                                "fabric_preferences": {
-                                  "type": "string",
-                                  "enum": [
-                                    "Cotton",
-                                    "Polyester",
-                                    "Silk"
-                                  ]
                                 },
                                 "color_preferences": {
                                   "type": "string"
@@ -91574,14 +91414,6 @@
                     "description": {
                       "type": "string"
                     },
-                    "fabric_preferences": {
-                      "type": "string",
-                      "enum": [
-                        "Cotton",
-                        "Polyester",
-                        "Silk"
-                      ]
-                    },
                     "color_preferences": {
                       "type": "string"
                     },
@@ -95312,14 +95144,6 @@
                     "description": {
                       "type": "string"
                     },
-                    "fabric_preferences": {
-                      "type": "string",
-                      "enum": [
-                        "Cotton",
-                        "Polyester",
-                        "Silk"
-                      ]
-                    },
                     "color_preferences": {
                       "type": "string"
                     },
@@ -98953,14 +98777,6 @@
                         "description": {
                           "type": "string"
                         },
-                        "fabric_preferences": {
-                          "type": "string",
-                          "enum": [
-                            "Cotton",
-                            "Polyester",
-                            "Silk"
-                          ]
-                        },
                         "color_preferences": {
                           "type": "string"
                         },
@@ -102240,14 +102056,6 @@
                                       },
                                       "description": {
                                         "type": "string"
-                                      },
-                                      "fabric_preferences": {
-                                        "type": "string",
-                                        "enum": [
-                                          "Cotton",
-                                          "Polyester",
-                                          "Silk"
-                                        ]
                                       },
                                       "color_preferences": {
                                         "type": "string"

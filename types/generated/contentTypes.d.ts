@@ -933,9 +933,6 @@ export interface ApiDesignRequestDesignRequest
   attributes: {
     title: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    fabric_preferences: Schema.Attribute.Enumeration<
-      ['Cotton', 'Polyester', 'Silk']
-    >;
     color_preferences: Schema.Attribute.String;
     deadline: Schema.Attribute.Date;
     budget: Schema.Attribute.Decimal;
