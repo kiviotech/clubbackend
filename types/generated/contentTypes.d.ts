@@ -1051,6 +1051,36 @@ export interface ApiEscrowEscrow extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
+  collectionName: 'galleries';
+  info: {
+    singularName: 'gallery';
+    pluralName: 'galleries';
+    displayName: 'Gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    catagory: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gallery.gallery'
+    >;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1893,6 +1923,7 @@ declare module '@strapi/strapi' {
       'api::design-request.design-request': ApiDesignRequestDesignRequest;
       'api::designer-showcase.designer-showcase': ApiDesignerShowcaseDesignerShowcase;
       'api::escrow.escrow': ApiEscrowEscrow;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::global.global': ApiGlobalGlobal;
       'api::milestone.milestone': ApiMilestoneMilestone;
       'api::order-detail.order-detail': ApiOrderDetailOrderDetail;
